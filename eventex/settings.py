@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
+# Static Files On S3 Amazon
 AWS_STORAGE_BUCKET_NAME = 'staticfileswttd'
 AWS_S3_REGION_NAME = 'us-east-1'  # e.g. us-east-2
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
@@ -140,3 +140,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+# Email configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
