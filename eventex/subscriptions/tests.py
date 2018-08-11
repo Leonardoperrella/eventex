@@ -18,7 +18,7 @@ class SubscribeTest(TestCase):
     def test_html(self):
         """Html must contain input tags"""
         self.assertContains(self.resp, '<form')
-        self.assertContains(self.resp, '<input',6)
+        self.assertContains(self.resp, '<input', 6)
         self.assertContains(self.resp, 'type="text"', 3)
         self.assertContains(self.resp, 'type="email"')
         self.assertContains(self.resp, 'type="submit"')
@@ -35,13 +35,13 @@ class SubscribeTest(TestCase):
     def test_form_has_fields(self):
         """Form must have 4 fields."""
         form = self.resp.context['form']
-        self.assertSequenceEqual(['name', 'cpf' , 'email', 'phone'], list(form.fields))
+        self.assertSequenceEqual(['name', 'cpf', 'email', 'phone'], list(form.fields))
 
 class SubscribePostTest(TestCase):
     def setUp(self):
         data = dict(name='Leonardo Perrella', cpf='12345678901',
                     email='leo.perrella85@gmail.com', phone='31-999464438')
-        self.resp = self.client.post('/inscricao/',data)
+        self.resp = self.client.post('/inscricao/', data)
 
     def test_post(self):
         """Valid POST should redirect to /inscricao"""
@@ -76,9 +76,11 @@ class SubscribePostTest(TestCase):
         self.assertIn('leo.perrella85@gmail', email.body)
         self.assertIn('31-999464438', email.body)
 
+
 class SubscribeInvalidPost(TestCase):
     def setUp(self):
-        self.resp = self.client.post('/inscricao/',{})
+        self.resp = self.client.post('/inscricao/', {})
+
     def test_post(self):
         """Invalid POST should not redirect"""
         self.assertEqual(200, self.resp.status_code)
