@@ -13,7 +13,7 @@ Sistema de Eventos encomendado pela Morena
 6. Execute os testes.
 
 ```console
-git clone git@github.com:leonardo/eventex.git wttd
+git clone git@github.com:Leonardoperrella/Eventex.git wttd
 cd wttd
 python -m venv .wttd
 Scripts/Activate
