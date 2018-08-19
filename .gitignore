@@ -9,3 +9,7 @@ credentials.csv
 documents/
 google-python-exercises/
 mod-1-29-visao-alem-do-alcance/
+Lib/
+Scripts/
+pip-selfcheck.json
+pyvenv.cfg
