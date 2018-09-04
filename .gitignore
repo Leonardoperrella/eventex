@@ -13,3 +13,4 @@ Lib/
 Scripts/
 pip-selfcheck.json
 pyvenv.cfg
+.ipynb_checkpoints/
