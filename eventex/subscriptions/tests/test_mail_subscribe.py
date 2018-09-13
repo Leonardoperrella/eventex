@@ -5,7 +5,7 @@ from django.test import TestCase
 class SubscribePostValid(TestCase):
     def setUp(self):
         data = dict(name='Leonardo Perrella', cpf='12345678901',
-                    email='leo.perrella85@gmail.com', phone='31-999464438')
+                    email='leo.perrella85@gmail.com', phone='31-999999999')
         self.client.post('/inscricao/', data)
         self.email = mail.outbox[0]
 
@@ -31,7 +31,7 @@ class SubscribePostValid(TestCase):
         contents = ['Leonardo Perrella',
                     '12345678901',
                     'leo.perrella85@gmail',
-                    '31-999464438']
+                    '31-999999999']
         for content in contents:
             with self.subTest():
                 self.assertIn(content, self.email.body)
