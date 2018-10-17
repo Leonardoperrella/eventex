@@ -29,7 +29,7 @@ class SubscriptionModelAdminTest(TestCase):
 
         mock.assert_called_with(None, '1 inscricao foi marcada como paga.')
 
-       
+
 
     def call_action(self):
         queryset = Subscription.objects.all()
