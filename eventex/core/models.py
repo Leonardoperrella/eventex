@@ -1,3 +1,4 @@
+from IPython.core.magic_arguments import magic_arguments
 from django.db import models
 from django.shortcuts import resolve_url as r
 
@@ -39,4 +40,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.value
+
+
+class Talk(models.Model):
+    title = models.CharField('título', max_length=200)
+    start = models.TimeField('início', blank=True, null=True)
+    description = models.TextField('descrição', blank=True)
+    speakers = models.ManyToManyField('Speaker', verbose_name='palestrantes', blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Palestras'
+        verbose_name = 'Palestra'
+
+    def __str__(self):
+        return self.title
 
