@@ -1,4 +1,3 @@
-from IPython.core.magic_arguments import magic_arguments
 from django.db import models
 from django.shortcuts import resolve_url as r
 
