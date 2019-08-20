@@ -8,10 +8,11 @@ class Subscription(models.Model):
     phone = models.CharField('telefone', max_length=20)
     created_at = models.DateTimeField('criado em', auto_now=True)
     paid = models.BooleanField('pago', default=False)
+
     class Meta:
         verbose_name_plural = 'inscrições'
         verbose_name = 'inscrição'
-        ordering = ('-created_at',) # menos (-) para descendente
+        ordering = ('-created_at',)  # menos (-) para descendente
 
     def __str__(self):
-       return self.name
+        return self.name
