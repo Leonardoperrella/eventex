@@ -19,7 +19,7 @@ class HomeTest(TestCase):
         self.assertTemplateUsed(self.response, 'index.html')
 
     def test_subscription_link(self):
-        expected = 'href="{}"'.format(r('subscriptions:new'))
+        expected = f"""href="{r('subscriptions:new')}\""""
         self.assertContains(self.response, expected)
 
     def test_speakers(self):
@@ -38,9 +38,9 @@ class HomeTest(TestCase):
                 self.assertContains(self.response, expected)
 
     def test_speakers_link(self):
-        expected = 'href="{}#speakers"'.format(r('home'))
+        expected = f"""href="{r('home')}#speakers\""""
         self.assertContains(self.response, expected)
 
     def test_talks_link(self):
-        expected = 'href="{}'.format(r('talk_list'))
+        expected = f"""href="{r('talk_list')}"""
         self.assertContains(self.response, expected)

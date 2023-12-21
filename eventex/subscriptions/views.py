@@ -24,9 +24,7 @@ class SubscriptionCreate(TemplateResponseMixin, ModelFormMixin, View):
         self.object = None
         form = self.get_form()
 
-        if not form.is_valid():
-            return self.form_invalid(form)
-        return self.form_valid(form)
+        return self.form_valid(form) if form.is_valid() else self.form_invalid(form)
 
     def form_valid(self, form):
         #self.object = form.save()
